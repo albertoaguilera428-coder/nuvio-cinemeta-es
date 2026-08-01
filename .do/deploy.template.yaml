@@ -3,6 +3,9 @@ spec:
   region: nyc
   services:
     - name: nuvio-cinemeta-es
+      git:
+        repo_clone_url: https://github.com/albertoaguilera428-coder/nuvio-cinemeta-es.git
+        branch: main
       environment_slug: nodejs
       instance_size_slug: apps-s-1vcpu-0.5gb
       instance_count: 1
