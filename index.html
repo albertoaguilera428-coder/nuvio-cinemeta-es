@@ -445,7 +445,7 @@
       }
 
       // Obtener el origen del host actual
-      const host = window.location.origin;
+      const host = window.location.origin + window.location.pathname.replace(/\/$/, "");
       
       // Generar URL final
       generatedManifestUrl = `${host}/${apiKey}/${lang}/manifest.json`;
