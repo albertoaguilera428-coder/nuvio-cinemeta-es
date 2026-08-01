@@ -8,7 +8,7 @@ Este addon de metadatos traduce automáticamente los catálogos y sinopsis de pe
 
 Haz clic en el siguiente botón para desplegar tu propia instancia totalmente administrada y con HTTPS automático en **DigitalOcean App Platform**:
 
-[![Deploy to DO](https://www.digitalocean.com/api/static-content/v1/images?src=https%3A%2F%2Fwww.deploytodo.com%2Fdo-btn-blue.svg&token=17b950890e7051c2a16c7739bad4f6d69e7773367b41d7b10e0e33a42a3e75b4)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/albertoaguilera428-coder/nuvio-cinemeta-es)
+[![Deploy to DO](https://www.digitalocean.com/api/static-content/v1/images?src=https%3A%2F%2Fwww.deploytodo.com%2Fdo-btn-blue.svg&token=17b950890e7051c2a16c7739bad4f6d69e7773367b41d7b10e0e33a42a3e75b4)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/albertoaguilera428-coder/nuvio-cinemeta-es/tree/main)
 
 *Nota: La configuración del servidor, puertos e instancias ya está pre-definida en el archivo `.do/deploy.template.yaml`.*
 
