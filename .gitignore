@@ -1,0 +1,17 @@
+# Dependencias de Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Configuración local sensible
+.env
+
+# Base de datos de caché local
+cache.json
+
+# Archivos de sistema y editores
+.DS_Store
+.vscode/
+.idea/
+thumbs.db

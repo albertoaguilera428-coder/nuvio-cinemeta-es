@@ -1,0 +1,17 @@
+name: nuvio-cinemeta-es
+region: nyc
+services:
+  - name: nuvio-cinemeta-es
+    environment_slug: nodejs
+    instance_size_slug: apps-s-1vcpu-0.5gb
+    instance_count: 1
+    http_port: 7000
+    run_command: npm start
+    source_dir: /
+    envs:
+      - key: NODE_ENV
+        scope: RUN_TIME
+        value: production
+      - key: PORT
+        scope: RUN_TIME
+        value: "7000"

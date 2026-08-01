@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cinemeta en Español - Configuración</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-gradient: radial-gradient(circle at 0% 0%, #1a103c 0%, #0d0822 50%, #05030f 100%);
+      --accent-color: #7c4dff;
+      --accent-glow: rgba(124, 77, 255, 0.4);
+      --success-color: #00e676;
+      --text-main: #f5f5f7;
+      --text-muted: #a0aec0;
+      --glass-bg: rgba(255, 255, 255, 0.03);
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --input-bg: rgba(0, 0, 0, 0.3);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Decorative background glowing shapes */
+    body::before {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: var(--accent-glow);
+      border-radius: 50%;
+      filter: blur(120px);
+      top: -10%;
+      left: -10%;
+      z-index: -1;
+    }
+
+    body::after {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: rgba(0, 229, 118, 0.15);
+      border-radius: 50%;
+      filter: blur(120px);
+      bottom: -10%;
+      right: -10%;
+      z-index: -1;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 650px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      padding: 3rem 2.5rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      z-index: 10;
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .logo-container {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--accent-color), #b388ff);
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 8px 24px rgba(124, 77, 255, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .logo-container svg {
+      width: 32px;
+      height: 32px;
+      fill: #fff;
+    }
+
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #fff 40%, #c3b4fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.5px;
+    }
+
+    p.subtitle {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .form-group {
+      margin-bottom: 1.8rem;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.6rem;
+      color: var(--text-main);
+      letter-spacing: 0.3px;
+    }
+
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    input[type="text"], select {
+      width: 100%;
+      padding: 1rem 1.2rem;
+      background: var(--input-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      color: var(--text-main);
+      font-size: 1rem;
+      font-family: inherit;
+      transition: all 0.3s ease;
+      outline: none;
+    }
+
+    input[type="text"]:focus, select:focus {
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 3px rgba(124, 77, 255, 0.15);
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .help-text {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      line-height: 1.4;
+    }
+
+    .help-text a {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .help-text a:hover {
+      color: #b388ff;
+      text-decoration: underline;
+    }
+
+    button.btn-primary {
+      width: 100%;
+      padding: 1.1rem;
+      background: linear-gradient(135deg, var(--accent-color), #6200ea);
+      border: none;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(124, 77, 255, 0.25);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+    }
+
+    button.btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(124, 77, 255, 0.4);
+      background: linear-gradient(135deg, #8c66ff, #651fff);
+    }
+
+    button.btn-primary:active {
+      transform: translateY(0);
+    }
+
+    /* Result Box Style */
+    .result-box {
+      margin-top: 2.5rem;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px dashed var(--glass-border);
+      border-radius: 16px;
+      padding: 1.8rem;
+      display: none;
+      animation: slideDown 0.4s ease-out;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .result-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--success-color);
+    }
+
+    .url-container {
+      display: flex;
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .url-input {
+      flex: 1;
+      padding: 0.8rem 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--glass-border);
+      border-radius: 8px;
+      color: #fff;
+      font-family: monospace;
+      font-size: 0.9rem;
+      read-only: true;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    button.btn-icon {
+      padding: 0 1.2rem;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--glass-border);
+      border-radius: 8px;
+      color: #fff;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+
+    button.btn-icon:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: #fff;
+    }
+
+    .action-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .btn-action {
+      padding: 0.9rem;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      font-size: 0.95rem;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .btn-stremio {
+      background: #4e3a8c;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-stremio:hover {
+      background: #5f48ad;
+      transform: translateY(-2px);
+    }
+
+    .btn-nuvio {
+      background: var(--success-color);
+      color: #05030f;
+      border: none;
+    }
+
+    .btn-nuvio:hover {
+      background: #00ff88;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 230, 118, 0.3);
+    }
+
+    footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      z-index: 10;
+    }
+
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--text-main);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="logo-container">
+        <svg viewBox="0 0 24 24">
+          <path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/>
+        </svg>
+      </div>
+      <h1>Cinemeta en Español</h1>
+      <p class="subtitle">Configura tus catálogos y metadatos de películas y series en español para Nuvio y Stremio.</p>
+    </header>
+
+    <div class="form-group">
+      <label for="apiKey">Clave de API de TMDB (API Key)</label>
+      <input type="text" id="apiKey" placeholder="Introduce tu API Key v3 de TMDB" autocomplete="off">
+      <p class="help-text">
+        ¿No tienes una clave? Regístrate gratis en 
+        <a href="https://www.themoviedb.org/settings/api" target="_blank">The Movie Database (TMDB)</a> 
+        y obtén una clave de API v3.
+      </p>
+    </div>
+
+    <div class="form-group">
+      <label for="language">Variante del Español</label>
+      <select id="language">
+        <option value="es-ES">Español (España) - es-ES</option>
+        <option value="es-MX">Español (Latinoamérica) - es-MX</option>
+      </select>
+      <p class="help-text">
+        Afecta a las sinopsis, títulos y portadas que se muestren en tu reproductor.
+      </p>
+    </div>
+
+    <button class="btn-primary" id="btnGenerate">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M12 5v14M5 12h14" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Generar URL del Addon
+    </button>
+
+    <div class="result-box" id="resultBox">
+      <div class="result-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+        ¡Addon configurado con éxito!
+      </div>
+      
+      <div class="url-container">
+        <div class="url-input" id="manifestUrl" title="Haz clic en copiar">http://...</div>
+        <button class="btn-icon" id="btnCopy">Copiar</button>
+      </div>
+
+      <div class="action-buttons">
+        <a href="#" class="btn-action btn-stremio" id="btnInstallStremio">
+          Instalar en Stremio
+        </a>
+        <button class="btn-action btn-nuvio" id="btnInstallNuvio">
+          Copiar para Nuvio
+        </button>
+      </div>
+      <p class="help-text" style="text-align: center; margin-top: 1rem;">
+        Para Nuvio: Pulsa en "Copiar para Nuvio", ve a la app y pega la URL en <strong>Ajustes > Plugins</strong>.
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    <p>Desarrollado en base al protocolo de addons de Stremio. | <a href="https://nuvio.tv" target="_blank">nuvio.tv</a></p>
+  </footer>
+
+  <script>
+    const btnGenerate = document.getElementById('btnGenerate');
+    const resultBox = document.getElementById('resultBox');
+    const manifestUrlElement = document.getElementById('manifestUrl');
+    const btnCopy = document.getElementById('btnCopy');
+    const btnInstallStremio = document.getElementById('btnInstallStremio');
+    const btnInstallNuvio = document.getElementById('btnInstallNuvio');
+
+    let generatedManifestUrl = '';
+
+    btnGenerate.addEventListener('click', () => {
+      const apiKey = document.getElementById('apiKey').value.trim();
+      const lang = document.getElementById('language').value;
+
+      if (!apiKey) {
+        alert('Por favor, introduce tu API Key de TMDB para continuar.');
+        return;
+      }
+
+      // Obtener el origen del host actual
+      const host = window.location.origin;
+      
+      // Generar URL final
+      generatedManifestUrl = `${host}/${apiKey}/${lang}/manifest.json`;
+
+      manifestUrlElement.textContent = generatedManifestUrl;
+      manifestUrlElement.setAttribute('title', generatedManifestUrl);
+      
+      // Configurar botones de instalación
+      // Stremio soporta el protocolo stremio:// para instalación directa
+      const stremioProtoUrl = generatedManifestUrl.replace(/^http/, 'stremio');
+      btnInstallStremio.setAttribute('href', stremioProtoUrl);
+
+      // Mostrar el bloque de resultados
+      resultBox.style.display = 'block';
+      resultBox.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Copiar URL al portapapeles
+    btnCopy.addEventListener('click', () => {
+      copyToClipboard(generatedManifestUrl, btnCopy, '¡Copiado!');
+    });
+
+    btnInstallNuvio.addEventListener('click', () => {
+      copyToClipboard(generatedManifestUrl, btnInstallNuvio, '¡URL Copiada para Nuvio!');
+    });
+
+    function copyToClipboard(text, button, successMsg) {
+      navigator.clipboard.writeText(text).then(() => {
+        const originalText = button.textContent;
+        button.textContent = successMsg;
+        button.style.borderColor = 'var(--success-color)';
+        if (button.classList.contains('btn-nuvio')) {
+          button.style.background = '#00ff88';
+        }
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.style.borderColor = '';
+          if (button.classList.contains('btn-nuvio')) {
+            button.style.background = 'var(--success-color)';
+          }
+        }, 2000);
+      }).catch(err => {
+        console.error('Error al copiar:', err);
+        alert('No se pudo copiar automáticamente. Por favor, selecciona y copia la URL manualmente.');
+      });
+    }
+  </script>
+</body>
+</html>
